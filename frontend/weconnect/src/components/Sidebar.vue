@@ -1,71 +1,95 @@
 <template>
-  <aside class="sidebar"> <!-- ========================= LOGO / BRAND ========================== -->
+  <aside class="sidebar">
     <div class="sidebar_brand">
-      <div class="sidebar_brand-icon"> <img :src="logo" alt="WeConnect logo" class="sidebar_brand-logo" /> </div>
-      <div class="sidebar_brand-text">
-        <h2>WeConnect</h2> <span>SUPPLIER NETWORK</span>
+      <div class="sidebar_brand-icon">
+        <img :src="logo" alt="WeConnect logo" class="sidebar_brand-logo" />
       </div>
-    </div> <!-- ========================= NAVIGATION ========================== -->
-    <nav class="sidebar_navigation"> <!-- Dashboard -->
-      <RouterLink to="/dashboard" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active"> <span
-          class="sidebar_nav-icon">
-          <FontAwesomeIcon :icon="faChartLine" />
-        </span> <span>Dashboard</span> <span class="sidebar_notification-dot"></span> </RouterLink> <!-- Products -->
-      <RouterLink to="/products" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active"> <span
-          class="sidebar_nav-icon">
-          <FontAwesomeIcon :icon="faShoppingBag" />
-        </span> <span>Products</span> <span class="sidebar_notification-dot"></span> </RouterLink> <!-- Orders -->
-      <RouterLink to="/orders" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active"> <span
-          class="sidebar_nav-icon">
-          <FontAwesomeIcon :icon="faList" />
-        </span> <span>Orders</span> <span class="sidebar_notification-dot"></span> </RouterLink>
-      <!-- Stock Management -->
-      <RouterLink to="/stockmanagement" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active"> <span
-          class="sidebar_nav-icon">
-          <FontAwesomeIcon :icon="faWarehouse" />
-        </span> <span>Stock Management</span> <span class="sidebar_notification-dot"></span> </RouterLink>
-      <!-- Deliveries -->
-      <RouterLink to="/deliveries" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active"> <span
-          class="sidebar_nav-icon">
-          <FontAwesomeIcon :icon="faTruck" />
-        </span> <span>Deliveries</span> <span class="sidebar_notification-dot"></span> </RouterLink> <!-- Reviews -->
-      <RouterLink to="/reviews" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active"> <span
-          class="sidebar_nav-icon">
-          <FontAwesomeIcon :icon="faStar" />
-        </span> <span>Reviews</span> <span class="sidebar_notification-dot"></span> </RouterLink>
-      <!-- Business Profile -->
-      <RouterLink to="/profile" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active"> <span
-          class="sidebar_nav-icon">
-          <FontAwesomeIcon :icon="faAddressCard" />
-        </span> <span>Business Profile</span> <span class="sidebar_notification-dot"></span> </RouterLink>
-    </nav> <!-- ========================= LOGOUT ========================== --> <button class="sidebar_logout"
-      @click="logout"> <span class="sidebar_logout-icon">
-        <FontAwesomeIcon :icon="faUser" />
-      </span> <span>Log out</span> </button>
+      <div class="sidebar_brand-text">
+        <h2>WeConnect</h2>
+        <span>SUPPLIER NETWORK</span>
+      </div>
+    </div>
+
+    <nav class="sidebar_navigation">
+      <RouterLink to="/dashboard" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active">
+        <span class="sidebar_nav-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14.5h7V20H4zm9-11h7v7h-7zm0 9h7v7h-7zM4 4h7v7H4z"/></svg>
+        </span>
+        <span>Dashboard</span>
+        <span class="sidebar_notification-dot"></span>
+      </RouterLink>
+
+      <RouterLink to="/products" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active">
+        <span class="sidebar_nav-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6.5A2.5 2.5 0 0 1 8.5 4h7A2.5 2.5 0 0 1 18 6.5v11A2.5 2.5 0 0 1 15.5 20h-7A2.5 2.5 0 0 1 6 17.5zm2.5-.5a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-.5-.5zm1.5 3h4v2h-4zm0 4h6v2h-6z"/></svg>
+        </span>
+        <span>Products</span>
+        <span class="sidebar_notification-dot"></span>
+      </RouterLink>
+
+      <RouterLink to="/orders" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active">
+        <span class="sidebar_nav-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4h10M7 12h6M7 16h8"/></svg>
+        </span>
+        <span>Orders</span>
+        <span class="sidebar_notification-dot"></span>
+      </RouterLink>
+
+      <RouterLink to="/stockmanagement" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active">
+        <span class="sidebar_nav-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5 12 4l8 4.5v7L12 20l-8-4.5zm8 1.5 6.2-3.5L12 3.5 5.8 6.5zm-6 3.7 5 2.8v3.2l-5-2.8zm12 0v3.2l-5 2.8v-3.2z"/></svg>
+        </span>
+        <span>Stock Management</span>
+        <span class="sidebar_notification-dot"></span>
+      </RouterLink>
+
+      <RouterLink to="/deliveries" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active">
+        <span class="sidebar_nav-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h10v8H3zm12 0h3l3 4v4h-2.5A2.5 2.5 0 0 1 16 17.5 2.5 2.5 0 0 1 13.5 15H12V7h3zm-1 10.5A1.5 1.5 0 0 0 13.5 19 1.5 1.5 0 0 0 15 17.5 1.5 1.5 0 0 0 13.5 16 1.5 1.5 0 0 0 12 17.5zM5 9.5h6v3H5z"/></svg>
+        </span>
+        <span>Deliveries</span>
+        <span class="sidebar_notification-dot"></span>
+      </RouterLink>
+
+      <RouterLink to="/reviews" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active">
+        <span class="sidebar_nav-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 17.3 5.4 3.2-1.5-6.2L21 9.4l-6.3-.6L12 3l-2.7 5.8L3 9.4l4.9 4.9-1.5 6.2z"/></svg>
+        </span>
+        <span>Reviews</span>
+        <span class="sidebar_notification-dot"></span>
+      </RouterLink>
+
+      <RouterLink to="/profile" class="sidebar_nav-item" exact-active-class="sidebar_nav-item--active">
+        <span class="sidebar_nav-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12.5A3.5 3.5 0 1 0 12 5.5a3.5 3.5 0 0 0 0 7zm-7 6.5a7 7 0 0 1 14 0v1H5zm15-11.5h2v2h-2v2h-2v-2h-2V7.5h2v-2h2z"/></svg>
+        </span>
+        <span>Business Profile</span>
+        <span class="sidebar_notification-dot"></span>
+      </RouterLink>
+    </nav>
+
+    <button class="sidebar_logout" @click="logout">
+      <span class="sidebar_logout-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7V5a3 3 0 0 1 3-3h5a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3h-5a3 3 0 0 1-3-3v-2h2v2a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-5a1 1 0 0 0-1 1v2zm-1.5 6.5h8v2h-8v2.5L3 12l4.5-6v2.5z"/></svg>
+      </span>
+      <span>Log out</span>
+    </button>
   </aside>
 </template>
-<script setup>
-import logo from "../assets/link-icon-white.png"
-import { useRouter } from "vue-router"
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
-import { faChartLine } from "@fortawesome/free-solid-svg-icons"
-import { faShoppingBag } from "@fortawesome/free-solid-svg-icons"
-import { faList } from "@fortawesome/free-solid-svg-icons"
-import { faWarehouse } from "@fortawesome/free-solid-svg-icons"
-import { faTruck } from "@fortawesome/free-solid-svg-icons"
-import { faStar } from "@fortawesome/free-solid-svg-icons"
-import { faUser } from "@fortawesome/free-solid-svg-icons"
-import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
-/* ========================= ROUTER ========================= */
-const router = useRouter()
-/* ========================= LOGOUT ========================= */
-function logout() {
-  localStorage.removeItem("token")
-  localStorage.removeItem("user")
-  router.push("/login")
-}
 
+<script setup>
+import logo from '../assets/link-icon-white.png'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+function logout() {
+  localStorage.removeItem('token')
+  localStorage.removeItem('user')
+  router.push('/products')
+}
 </script>
+
 <style scoped>
 /* ========================================================= SIDEBAR ========================================================= */
 .sidebar {
@@ -194,8 +218,18 @@ function logout() {
   align-items: center;
   justify-content: center;
   color: #bba99f;
-  font-size: 18px;
   flex-shrink: 0;
+}
+
+.sidebar_nav-icon svg,
+.sidebar_logout-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* ========================================================= NOTIFICATION DOT ========================================================= */
